@@ -16,7 +16,7 @@ services:
     env_file:
       - .env
     ports:
-      - "5000:5000"
+      - "127.0.0.1:5002:5000"
     depends_on:
       - redis
     restart: unless-stopped
