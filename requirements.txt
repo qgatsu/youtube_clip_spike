@@ -1,0 +1,9 @@
+Flask>=3.0.0
+python-dotenv>=1.0.0
+PyYAML>=6.0
+chat-downloader>=0.2.7
+numpy>=1.26
+redis>=5.0
+rq>=1.15
+gunicorn>=21.2
+requests>=2.31

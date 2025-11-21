@@ -1,0 +1,24 @@
+chatdownloader:
+  request_timeout: 10
+  message_limit: null
+
+youtube:
+  api_key: null
+  segment_duration_seconds: 900
+  parallel_segments: 5
+
+cps:
+  bucket_size_seconds: 5
+  smoothing_window_seconds: 60
+  smoothing_average_window: 6
+
+spike_detection:
+  min_prominence: 2.0
+  min_gap_seconds: 10
+  pre_start_buffer_seconds: 10
+
+redis:
+  url: redis://redis:6379/0
+  queue_name: analysis
+  job_timeout: 900
+  result_ttl: 86400

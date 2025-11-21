@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>YouTube コメントスパイク解析</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <main>
+      <h1>YouTube コメントスパイク解析</h1>
+      <section class="form-section">
+        <label>配信URL</label>
+        <input type="url" id="url-input" placeholder="https://www.youtube.com/watch?v=..." />
+        <button id="analyze-btn">全コメントを解析</button>
+        <p id="status-text">準備完了</p>
+        <div class="progress">
+          <div class="progress__bar" id="progress-bar"></div>
+        </div>
+      </section>
+
+      <section class="result-section">
+        <div class="section-header">
+          <h2>全コメントスパイク</h2>
+        </div>
+        <div class="result-grid">
+          <div class="chart-wrapper">
+            <canvas id="total-chart"></canvas>
+          </div>
+          <div>
+            <h3>スパイク一覧</h3>
+            <ul id="total-spike-list" class="spike-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="keyword-section">
+        <h2>キーワードフィルタ</h2>
+        <div class="keyword-controls">
+          <input type="text" id="keyword-input" placeholder="例: GG" />
+          <button id="keyword-analyze-btn" disabled>キーワード解析</button>
+        </div>
+        <p id="keyword-status">キーワード未解析</p>
+        <div class="result-grid">
+          <div class="chart-wrapper">
+            <canvas id="keyword-chart"></canvas>
+          </div>
+          <div>
+            <h3>キーワードスパイク</h3>
+            <ul id="keyword-spike-list" class="spike-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

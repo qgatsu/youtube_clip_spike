@@ -1,0 +1,125 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  background: #f7f9fc;
+}
+
+main {
+  width: 100%;
+  padding: 2rem 3rem;
+  box-sizing: border-box;
+}
+
+.form-section {
+  display: grid;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  border: 1px solid #cdd7e1;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: none;
+  background: #0077ff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.progress {
+  width: 100%;
+  height: 6px;
+  background: #e5ecf5;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress__bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #0077ff, #00c48c);
+  transition: width 0.3s ease;
+}
+
+.progress__bar.active {
+  animation: progress-stripes 1.2s linear infinite;
+  width: 100%;
+}
+
+@keyframes progress-stripes {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.result-section,
+.keyword-section {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  min-height: 320px;
+}
+
+.chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+  margin: 0 auto;
+}
+
+.spike-list {
+  list-style: none;
+  padding-left: 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.spike-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.keyword-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+}
